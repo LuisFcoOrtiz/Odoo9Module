@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <openerp>
+        <data>
+            <record id="view_form_aplicacion_ejemplo01_task" model="ir.ui.view">
+                <field name="name">Aplicaión ejemplo01  Form</field>
+                <field name="model">aplicacionejemplo01.task</field>
+                <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="do_toggle_done" type="object" string="Inserccion realizada" class="oe_highlight" />
+                        <button name="do_clear_done" type="object" string="Toda limpio" />
+                    </header>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="name2"/>
+                                <field name="name3" widget = 'date'/>
+				<field name="tlfno" widget = 'phone'/>
+				<field name="email" widget = 'email'/>
+				<field name="comboBo"/>
+				<field name="prioridad" widget ='priority'/>
+				<field name="name4" widget = 'image'/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+                </field>
+            </record>
+
+            <!-- Action to open aplicacion Task list -->
+            <act_window
+                id="action_aplicacion_ejemplo01_task"
+                name="Incidencia"
+                res_model="aplicacionejemplo01.task"
+                view_mode="tree,form"
+            />
+            <!-- Menu item to open aplicacion Task list -->
+            <menuitem
+                id="menu_aplicacion_ejemplo01_task"
+                name="Incidencia"
+
+                sequence="20"
+                action="action_aplicacion_ejemplo01_task"
+            />
+        </data>
+
+
+
+    </openerp>
